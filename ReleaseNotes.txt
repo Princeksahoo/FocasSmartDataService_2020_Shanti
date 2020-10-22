@@ -1,0 +1,17 @@
+Release Notes V5.0.0
+2019-Dec
+1. Push and Pull program transfer from Service based on request from CNC on Macro locations.
+2. Settings for Push and Pull macro location : values needs to updated in FOCAS_Defaults tables.
+3. Script is provided to insert the Macro Location in FOCAS_Defaults tables.
+4. TPM-Trak Data collaction String :Enabled Workorder in Type 11,1,22,2 string.
+5. TPM-Trak Data collaction String :Enabled Rejection string.
+6. Fix the issue in Type 1 and Type 2 records. Extra value was coming after end time.
+7. Fix the issue of service not responding for Hi-tech program transfer.
+2020-01-02 : 
+1. Offset correction enabled using FOCAS and SPCDataCollaction (Gauage data collaction using TID for Gauage). 
+   Please use SPC.NET to set the macro location for each characteristics id
+   and Use machine information to enter Channel Id and seperator between ChannelId and Value. Multiple values can be enter using seperators.
+
+   2020-07-01 : 
+1. Add machine status and program number inser to new table Focas_MachineRunningStatus. table used in Agg proc.
+2. Remove data deletion from service. Please install cleanup process to delete the data from tables.

@@ -1,0 +1,26 @@
+GO
+ALTER TABLE dbo.SPC_Characteristic ADD
+	UniqueIDByMC int NULL,
+	UniqueIDMacroLocation int NULL,
+	UniqueIDAckMacroLocation int NULL,
+	WearOffsetAckFlagMacro int NULL,
+	ValidRecordForOffsetCorrection bit NULL,
+	OfsetCorrectionPerformed bit NULL
+GO
+ALTER TABLE dbo.SPC_Characteristic ADD CONSTRAINT
+	DF_SPC_Characteristic_ValidRecordForOffsetCorrection DEFAULT 0 FOR ValidRecordForOffsetCorrection
+GO
+ALTER TABLE dbo.SPC_Characteristic ADD CONSTRAINT
+	DF_SPC_Characteristic_OfsetCorrectionPerformed DEFAULT 0 FOR OfsetCorrectionPerformed
+GO
+ALTER TABLE dbo.SPC_Characteristic SET (LOCK_ESCALATION = TABLE)
+GO
+
+CREATE TABLE [dbo].[FOCAS_OEE_MacroLocation](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[MachineID] [nvarchar](50) NOT NULL,
+	[DataReadFlagLocation] [int] NOT NULL,
+	[DataStartLocation] [int] NOT NULL,
+	[DataEndLocation] [int] NOT NULL
+) ON [PRIMARY]
+GO
